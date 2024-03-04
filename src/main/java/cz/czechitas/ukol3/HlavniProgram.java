@@ -14,8 +14,9 @@ public class HlavniProgram {
         //ukol 1
         //test, že počítač jde zapnout, jen pokud je správně sestavený.
         Pocitac mujPc = new Pocitac();
-        System.out.println(mujPc.toString());
-        mujPc.zapniSe();
+        // nepůjde zapnout, protože mu chybí komponenty
+        // mujPc.zapniSe();
+
         // pridám komponenty
         Procesor mujProcesor = new Procesor();
         mujProcesor.setRychlost(3_000_000_000L);
@@ -32,27 +33,26 @@ public class HlavniProgram {
         mujPc.setPevnyDisk(mujDisk);
 
         //test toString funkce
-        System.out.println(mujPc.toString());
+        System.out.println(mujPc);
 
         mujPc.zapniSe();
-        System.out.println(mujPc.toString());
+        /*
         mujPc.zapniSe();      // Vypíše chybu, protože počítač už běží
         mujPc.vypniSe();
-        System.out.println(mujPc.toString());
+        System.out.println(mujPc);
 
-        mujPc.vypniSe();      // Nevypíše chybu, ale nic neprovede, protože počítač už je vypnutý */
+        mujPc.vypniSe();      // Nevypíše chybu, ale nic neprovede, protože počítač už je vypnutý
 
-        System.out.println("Program spuštěn.");
+        System.out.println("Program spuštěn."); */
         //ukol 2
         System.out.println(mujDisk.getVyuziteMisto());
-        mujPc.vytvorSouborOVelikosti(1012538540000L); //vytvorí súbor o velkosti menše ako je kapacita disku
+        mujPc.vytvorSouborOVelikosti(1012538540000L); //vytvorí súbor o velkosti menši ako je kapacita disku
         mujPc.vytvorSouborOVelikosti(1012538540000L); //vyhodí chybu, kapacita disku je prekročená
         System.out.println(mujDisk.getVyuziteMisto());
         mujPc.vymazSouboryOVelikosti(9999999999999L); //vyhodí chybu, pokúsi sa vymazat súbory vačšie ako kapacita disku
         System.out.println(mujDisk.getVyuziteMisto());
         mujPc.vymazSouboryOVelikosti(9999999L); //vymaze súbory zadanej velkosti
         System.out.println(mujDisk.getVyuziteMisto());
-
     }
 
 }

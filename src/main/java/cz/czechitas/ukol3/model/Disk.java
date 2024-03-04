@@ -21,7 +21,7 @@ public class Disk {
             this.vyuziteMisto = vyuziteMisto;
         } else if (vyuziteMisto > kapacita) {
             System.err.println("Na disku není dostatek místa.");
-        } else if (vyuziteMisto < 0) {
+        } else  {
             System.err.println("Využité místo na disku nemůže být menší než 0.");
         }
     }

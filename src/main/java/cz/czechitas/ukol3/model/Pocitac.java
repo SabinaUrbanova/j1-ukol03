@@ -48,7 +48,7 @@ public class Pocitac {
         } else {
             stav = "vypnutý";
         }
-        return ("Toto je počítač, který je " + stav);
+        return ("Stav pocitace: " + stav + ", CPU: " + cpu.toString() + ", RAM: " + ram.toString());
     }
 
     public boolean jeZapnuty() {
@@ -57,14 +57,16 @@ public class Pocitac {
     public void zapniSe() {
         if (jeZapnuty) {
             System.err.println("Počítač není možno zapnout dvakrát.");
-        } else
-        if (ram == null | cpu == null | pevnyDisk == null) {
+        } else if (ram == null || cpu == null || pevnyDisk == null) {
             System.err.println("Nejaká komponenta chybí. Zkontrolujte procesor, paměť a disk");
         } else {
             jeZapnuty = true;
         }
     }
     public void vypniSe() {
+        if (!jeZapnuty) {
+            return;
+        }
         jeZapnuty = false;
     }
 
